@@ -18,5 +18,6 @@ ReactDOM.render(
 );
 
 registerServiceWorker();
+
 export default App;
 export { rootReducer };
