@@ -6,6 +6,7 @@ import App from './App';
 import store from './store';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
+import combineReducers from './reducers/index';
 
 /* eslint-disable react/jsx-filename-extension */
 
@@ -17,3 +18,6 @@ ReactDOM.render(
 );
 
 registerServiceWorker();
+
+export { combineReducers };
+export default App;
