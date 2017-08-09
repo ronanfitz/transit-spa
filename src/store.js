@@ -1,22 +1,15 @@
-<<<<<<< HEAD
 import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 // import logger from 'redux-logger';
-=======
-import createStore from 'redux';
->>>>>>> Initial dashboard integration
 import rootReducer from './reducers';
+import Api from './utils/Api';
 
 /* eslint-disable no-underscore-dangle */
 
-<<<<<<< HEAD
 const store = createStore(
   rootReducer,
   applyMiddleware(thunkMiddleware.withExtraArgument({ Api })),
 );
-=======
-const store = createStore(rootReducer);
->>>>>>> Initial dashboard integration
 
 // const store = createStore(
 //   rootReducer,
