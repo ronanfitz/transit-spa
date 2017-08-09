@@ -25,7 +25,6 @@ class App extends Component {
               <Grid.Row id="destinations-container">
                 <DestinationTable />
               </Grid.Row>
-
               <Grid.Row
                 className="transit-container"
                 id="new-destinations-container"
