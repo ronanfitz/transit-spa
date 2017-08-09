@@ -8,16 +8,12 @@ describe('root reducer', () => {
         byId: {
           transit: {
             configuration: {
-<<<<<<< HEAD
               geolocating: true,
               currentLocation: {
                 address: '44 Tehama St, San Francisco, CA 94105',
                 lat: 37.7873889,
                 lng: -122.3964106,
               },
-=======
-              currentLocation: { address: '44 Tehama St, San Francisco, CA 94105' },
->>>>>>> dce853eeb4caea77abcd19201e8f3b292bd64e99
             },
             destinations: {
               ids: [],
