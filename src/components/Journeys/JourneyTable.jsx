@@ -8,6 +8,7 @@ import BestJourney from './BestJourney';
 import NextBestJourney from './NextBestJourney';
 
 import { fetchJourneys } from '../../actions';
+import injectWidgetId from '../../utils/utils';
 
 export function timeToLeaveConverter(departureTimeInSeconds) {
   const currentTimeInSeconds = Date.now() / 1000;
@@ -95,10 +96,11 @@ JourneyTable.defaultProps = {
   ],
 };
 export const mapStateToProps = (state, ownProps) => {
-  const origin = state.configuration.currentLocation.address;
-  const destinationsById = state.destinations.byId;
+  const id = ownProps.widgetId;
+  const origin = state.widgets.byId[id].configuration.currentLocation.address;
+  const destinationsById = state.widgets.byId[id].destinations.byId;
   const destinationId = ownProps.id;
-  const journeys = state.journeys.byDestinationId[destinationId];
+  const journeys = state.widgets.byId[id].journeys.byDestinationId[destinationId];
 
   return {
     origin,
@@ -116,4 +118,4 @@ export const mapDispatchToProps = dispatch =>
     dispatch,
   );
 
-export default connect(mapStateToProps, mapDispatchToProps)(JourneyTable);
+export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(JourneyTable));

@@ -8,6 +8,8 @@ import { addDestination } from '../../actions';
 import './button.css';
 
 import Api from '../../utils/Api';
+import injectWidgetId from '../../utils/utils';
+
 
 class PlacesAutocompleteForm extends Component {
   constructor(props) {
@@ -66,8 +68,9 @@ PlacesAutocompleteForm.defaultProps = {
   addDestination: () => {},
 };
 
-export const mapStateToProps = (state) => {
-  const origin = state.configuration.currentLocation.address;
+export const mapStateToProps = (state, ownProps) => {
+  const id = ownProps.widgetId;
+  const origin = state.widgets.byId[id].configuration.currentLocation.address;
 
   return {
     origin,
@@ -82,4 +85,4 @@ export const mapDispatchToProps = dispatch =>
     dispatch,
   );
 
-export default connect(mapStateToProps, mapDispatchToProps)(PlacesAutocompleteForm);
+export default injectWidgetId(connect(mapStateToProps, mapDispatchToProps)(PlacesAutocompleteForm));
