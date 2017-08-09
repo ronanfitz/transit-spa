@@ -9,9 +9,11 @@ describe('root reducer', () => {
           transit: {
             configuration: {
               geolocating: true,
-              address: '44 Tehama St, San Francisco, CA 94105',
-              lat: 37.7873889,
-              lng: -122.3964106,
+              currentLocation: {
+                address: '44 Tehama St, San Francisco, CA 94105',
+                lat: 37.7873889,
+                lng: -122.3964106,
+              },
             },
             destinations: {
               ids: [],
@@ -36,9 +38,12 @@ describe('root reducer', () => {
           transit: {
             configuration: {
               geolocating: true,
-              address: '44 Tehama St, San Francisco, CA 94105',
-              lat: 37.7873889,
-              lng: -122.3964106 },
+              currentLocation: {
+                address: '44 Tehama St, San Francisco, CA 94105',
+                lat: 37.7873889,
+                lng: -122.3964106,
+              },
+            },
             destinations: {
               ids: [],
               byId: {},
