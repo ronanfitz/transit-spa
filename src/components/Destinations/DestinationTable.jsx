@@ -35,6 +35,7 @@ DestinationTable.defaultProps = {
 
 export const mapStateToProps = (state, ownProps) => {
   const id = ownProps.widgetId;
+  console.log(id);
   const destinationIds = state.widgets.byId[id].destinations.ids;
   const destinationsById = state.widgets.byId[id].destinations.byId;
 
